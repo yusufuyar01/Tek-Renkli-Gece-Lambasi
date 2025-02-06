@@ -1,0 +1,15 @@
+//Bu devrenin resmini çekmemişim bu yüzden RGB devresinde yaptım ama sadece kırmızı kısmı çalıştıracak şekilde yazdım. 
+
+int led= 8;//ledi 8. pine bağladık.
+int parlaklik;//ledin parlaklık değerini tanımladık.
+
+void setup() {
+  pinMode(led, OUTPUT);//8.pinden çıkış verdik.
+  pinMode(A0, INPUT);//A0 pinine giriş verdik.Fotorezistörden gelen değer A0 a gidecel.
+
+}
+
+void loop() {
+
+  parlaklik=analogRead(A0);//fotorezistörden gelen değeri okuyup parlaklık değeri yaptık.
+  analogWrite(led,parlaklik);//led parlaklığa göre yandı.
